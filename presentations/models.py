@@ -28,8 +28,7 @@ class Presentation(UniquelySlugable):
     title = models.CharField(max_length=1024)
     description = models.TextField()
     author = models.CharField(max_length=1024)
-    slides = models.ManyToManyField('Slide', through='OrderedSlides',
-                                    null=True, blank=True)
+    slides = models.ManyToManyField('Slide', through='OrderedSlides')
 
     def __unicode__(self):
         return self.title
